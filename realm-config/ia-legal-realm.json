@@ -66,40 +66,6 @@
     }
   ],
   "users": [
-    {
-      "username": "admin",
-      "enabled": true,
-      "emailVerified": true,
-      "firstName": "Admin",
-      "lastName": "IA Legal",
-      "email": "admin@ialegal.com",
-      "credentials": [
-        {
-          "type": "password",
-          "value": "admin123",
-          "temporary": false
-        }
-      ],
-      "realmRoles": ["ia-admin"],
-      "groups": ["/ia-admins"]
-    },
-    {
-      "username": "testuser",
-      "enabled": true,
-      "emailVerified": true,
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "testuser@ialegal.com",
-      "credentials": [
-        {
-          "type": "password",
-          "value": "test123",
-          "temporary": false
-        }
-      ],
-      "realmRoles": ["ia-user"],
-      "groups": ["/ia-users"]
-    }
   ],
   "clientScopes": [
     {

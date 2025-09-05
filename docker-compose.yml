@@ -26,7 +26,7 @@ services:
       
       # Keycloak admin user
       KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin123
+      KEYCLOAK_ADMIN_PASSWORD: Firulero321!1
       
       # Keycloak configuration
       KC_HOSTNAME: keycloak.nilosolutions.com
