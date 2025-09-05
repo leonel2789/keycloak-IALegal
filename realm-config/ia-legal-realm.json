@@ -236,14 +236,15 @@
       "description": "Cliente para la aplicación móvil Front IA",
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
-      "secret": "front-ia-secret-2024",
+      "secret": "FrIa!Client$2024#Secure987",
       "redirectUris": [
         "exp://192.168.*:8081",
         "exp://localhost:8081", 
         "http://localhost:8081",
         "https://auth.expo.io/@*/front-ia",
         "exp://exp.host/@*/front-ia",
-        "front-ia://auth"
+        "front-ia://auth",
+        "https://legal.nilosolutions.com/*"
       ],
       "webOrigins": [
         "*"
