@@ -9,8 +9,8 @@ services:
       POSTGRES_PASSWORD: PgDb!2025
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
+    # ports:
+    #   - "5433:5432"  # ← CERRADO: PostgreSQL solo accesible internamente
     networks:
       - keycloak-network
     restart: unless-stopped
