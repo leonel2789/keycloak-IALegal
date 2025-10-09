@@ -55,10 +55,6 @@ services:
       KC_LOG_LEVEL: INFO
       KC_LOG_CONSOLE_OUTPUT: json
 
-      # Cache y rendimiento
-      KC_CACHE: ispn
-      KC_CACHE_STACK: kubernetes
-
       # JVM Options para mejor rendimiento (sin conflictos de GC)
       JAVA_OPTS_APPEND: >-
         -XX:+UseContainerSupport
