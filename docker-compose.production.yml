@@ -91,10 +91,9 @@ services:
       retries: 5
       start_period: 90s
 
-    # MODO PRODUCCIÓN (NO start-dev)
+    # MODO PRODUCCIÓN (sin --optimized para evitar problemas de build)
     command:
       - start
-      - --optimized
       - --import-realm
 
 volumes:
