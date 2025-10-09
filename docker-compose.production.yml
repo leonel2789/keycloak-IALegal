@@ -64,8 +64,8 @@ services:
     volumes:
       - ./realm-config:/opt/keycloak/data/import
       - ./themes:/opt/keycloak/themes
-    ports:
-      - "8085:8080"
+    expose:
+      - "8080"
     depends_on:
       postgres:
         condition: service_healthy
