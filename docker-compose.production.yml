@@ -59,14 +59,11 @@ services:
       KC_CACHE: ispn
       KC_CACHE_STACK: kubernetes
 
-      # JVM Options para mejor rendimiento
+      # JVM Options para mejor rendimiento (sin conflictos de GC)
       JAVA_OPTS_APPEND: >-
         -XX:+UseContainerSupport
         -XX:MaxRAMPercentage=75.0
-        -XX:+UseG1GC
-        -XX:MaxGCPauseMillis=500
         -Djava.net.preferIPv4Stack=true
-        -Djboss.modules.system.pkgs=org.jboss.byteman
 
     volumes:
       - ./realm-config:/opt/keycloak/data/import
