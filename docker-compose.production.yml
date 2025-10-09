@@ -9,8 +9,6 @@ services:
       POSTGRES_PASSWORD: PgDb!2025
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - keycloak-network
     restart: unless-stopped
     # Resource limits para evitar OOM
     deploy:
@@ -69,8 +67,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    networks:
-      - keycloak-network
     restart: unless-stopped
 
     # Resource limits (IMPORTANTE para evitar 504)
@@ -98,7 +94,3 @@ services:
 
 volumes:
   postgres_data:
-
-networks:
-  keycloak-network:
-    driver: bridge
