@@ -9,8 +9,6 @@ services:
       POSTGRES_PASSWORD: PgDb!2025
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    # ports:
-    #   - "5433:5432"  # ← CERRADO: PostgreSQL solo accesible internamente
     networks:
       - keycloak-network
     restart: unless-stopped
@@ -36,8 +34,6 @@ services:
       KC_METRICS_ENABLED: true
       KC_PROXY: edge
       KC_HOSTNAME_STRICT: false
-      
-      # Development mode
       KC_LOG_LEVEL: INFO
       
     volumes:
@@ -50,9 +46,18 @@ services:
     networks:
       - keycloak-network
     restart: unless-stopped
-    command: 
-      - start-dev
+    # CAMBIO CRÍTICO: Usar 'start' en lugar de 'start-dev' para producción
+    command:
+      - start
       - --import-realm
+    # AGREGAR ESTAS LABELS para configurar Traefik correctamente
+    labels:
+      # Configuración del servicio
+      - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
+      - "traefik.http.services.keycloak.loadbalancer.passhostheader=true"
+      # Middleware para reintentos en caso de errores de red
+      - "traefik.http.middlewares.keycloak-retry.retry.attempts=3"
+      - "traefik.http.middlewares.keycloak-retry.retry.initialinterval=100ms"
 
 volumes:
   postgres_data:
